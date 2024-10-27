@@ -1,0 +1,126 @@
+<!--
+  ThinkMate
+  Copyright 2024
+  SPDX-License-Identifier: Apache-2.0
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="color-scheme" content="dark light">
+     <link
+       rel="icon"
+       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>"
+     >
+     <link rel="stylesheet" href="style.css">
+     <title>ThinkMate - Your AI Knowledge Companion</title>
+     <script>
+       if (!isSecureContext) location.protocol = "https:";
+     </script>
+     <script src="script.js" type="module"></script>
+   </head>
+   <body>
+     <header>
+       <h1>🧠 ThinkMate</h1>
+       <p>Your AI-powered summary and debate prep tool.</p>
+       <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+     </header>
+ 
+     <main>
+       <section id="prompt-area">
+         <form id="input-form">
+           <label>
+             Paste Text
+             <textarea id="inputText" placeholder="Enter text here..."></textarea>
+           </label>
+           <div class="settings">
+             <label for="genre">Genre:</label>
+             <select id="genre">
+               <option value="sci-fi">Sci-Fi</option>
+               <option value="mystery">Mystery</option>
+               <option value="professional">Professional</option>
+             </select>
+             
+             <label for="style">Rewrite Style:</label>
+             <select id="style">
+               <option value="narrative">Narrative</option>
+               <option value="informal">Informal</option>
+               <option value="formal">Formal</option>
+             </select>
+             
+             <label for="language">Language:</label>
+             <select id="language">
+               <option value="en">English</option>
+               <option value="es">Spanish</option>
+               <option value="fr">French</option>
+             </select>
+             
+             <label for="session-temperature">Temperature</label>
+             <input id="session-temperature" type="number" step="any" min="0" value="1.0">
+             
+             <label for="session-top-k">Top-K</label>
+             <input id="session-top-k" type="number" min="1" value="10">
+           </div>
+ 
+           <button type="button" id="generate-summary" onclick="generateSummary()">Generate Summary</button>
+           <button type="button" id="generate-rewrite" onclick="generateRewrite()">Generate Rewrite</button>
+           <button type="button" id="generate-counter" onclick="generateCounterArgument()">Generate Counter-Argument</button>
+         </form>
+         
+         <h2>Response Stats</h2>
+         <table>
+           <thead>
+             <tr>
+               <th>Temperature</th>
+               <th>Top-k</th>
+               <th>Tokens Used</th>
+               <th>Tokens Left</th>
+               <th>Max Tokens</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td id="temperature-stat">&nbsp;</td>
+               <td id="top-k-stat">&nbsp;</td>
+               <td id="tokens-so-far">&nbsp;</td>
+               <td id="tokens-left">&nbsp;</td>
+               <td id="max-tokens">&nbsp;</td>
+             </tr>
+           </tbody>
+         </table>
+       </section>
+ 
+       <section id="output-section">
+         <h2>Generated Output</h2>
+         <div id="outputContainer">
+           <p id="outputText">Your generated content will appear here...</p>
+         </div>
+ 
+         <h3>Response History</h3>
+         <div id="historyContainer" class="history-box"></div>
+       </section>
+ 
+       <section id="feedback-section">
+         <h2>Feedback</h2>
+         <label for="rating">Rate the Response:</label>
+         <select id="rating">
+           <option value="5">Excellent</option>
+           <option value="4">Good</option>
+           <option value="3">Average</option>
+           <option value="2">Poor</option>
+           <option value="1">Terrible</option>
+         </select>
+         <textarea id="feedbackComment" placeholder="Add any comments..."></textarea>
+         <button onclick="submitFeedback()">Submit Feedback</button>
+       </section>
+     </main>
+ 
+     <footer>
+       <small>Created by the ThinkMate team. Open source on 
+         <a href="https://github.com/your-repo">GitHub</a>.
+       </small>
+     </footer>
+   </body>
+ </html>
+ 

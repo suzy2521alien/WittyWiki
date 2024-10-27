@@ -1,0 +1,20 @@
+{
+  "name": "thinkmate",
+  "version": "1.0.0",
+  "description": "ThinkMate: An AI-powered knowledge companion for summaries, rewrites, and debate prep.",
+  "scripts": {
+    "start": "npx http-server",
+    "fix": "prettier --write ."
+  },
+  "author": "ThinkMate Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "prettier": "^3.3.3",
+    "dompurify": "^3.1.6",
+    "marked": "^13.0.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
